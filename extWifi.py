@@ -66,9 +66,10 @@ class extWifi(plugins.Plugin):
         self.ready = True
         self.config_check()  # Check if config have the disable line
         logging.info("[extWifi]: extWifi plugin loaded.")
-        # logging.info("[extWifi]: Sleep for 3 sec.")
-        #time.sleep(3)
-        # self.restart_pi()
+        logging.info("[extWifi]: Sleep for 3 sec.")
+        time.sleep(3)
+        logging.info("[extWifi]: Reboot.")
+        self.restart_pi()
 
     def on_ui_setup(self, ui):
         with ui._lock:
@@ -90,6 +91,7 @@ class extWifi(plugins.Plugin):
             with ui._lock:
                 ui.remove_element('extWifi-status')
         logging.info('[extWifi]: extWifi successfully Unloaded.')
-        # logging.info("[extWifi]: Sleep for 3 sec.")
-        #time.sleep(3)
-        # self.restart_pi()
+        logging.info("[extWifi]: Sleep for 3 sec.")
+        time.sleep(3)
+        logging.info("[extWifi]: Reboot.")
+        self.restart_pi()
